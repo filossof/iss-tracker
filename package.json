@@ -1,0 +1,26 @@
+{
+  "name": "iss-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node-dev src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@turf/turf": "^7.0.0",
+    "@types/express": "^4.17.21",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.3",
+    "utm": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/utm": "^1.1.4"
+  }
+}
