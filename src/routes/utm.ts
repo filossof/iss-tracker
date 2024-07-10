@@ -1,13 +1,13 @@
 import { Router } from "express";
-import axios from "axios";
 import * as utm from "utm";
+import { getISSData } from "../issCache";
 
 const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const response = await axios.get("http://api.open-notify.org/iss-now.json");
-    const { latitude, longitude } = response.data.iss_position;
+    let issData = await getISSData();
+    const { latitude, longitude } = issData;
     const utmPosition = utm.fromLatLon(latitude, longitude);
     res.json(utmPosition);
   } catch (error) {

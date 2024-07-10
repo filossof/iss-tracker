@@ -1,7 +1,7 @@
 import { Router } from "express";
-import axios from "axios";
 import * as turf from "@turf/turf";
 import countries from "../data/countries.json";
+import { getISSData } from "../issCache";
 
 const router = Router();
 
@@ -19,10 +19,8 @@ const isPointInPolygon = (point: [number, number], polygon: any) => {
 
 router.get("/", async (req, res) => {
   try {
-    const response = await axios.get("http://api.open-notify.org/iss-now.json");
-    const { latitude, longitude } = response.data.iss_position;
-    const timestamp = response.data.timestamp;
-    const formattedTime = new Date(timestamp * 1000).toLocaleString();
+    let issData = await getISSData();
+    const { latitude, longitude, formattedTime } = issData;
     let currentLocation = "Ocean";
 
     for (const country of countries.features) {
