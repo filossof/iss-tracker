@@ -43,3 +43,20 @@ npm start
 - GET /countries: Returns all country names from the dataset.
 - GET /iss: Returns the name of the country the ISS is currently above or 'Ocean' if not above a country.
 - GET /utm: Returns the UTM coordinates of the ISS.
+
+### Project Structure
+
+iss-tracker/
+├── src/
+│ ├── data/
+│ │ └── countries.json
+│ ├── routes/
+│ │ ├── countries.ts
+│ │ ├── iss.ts
+│ │ └── utm.ts
+│ ├── app.ts
+│ └── server.ts
+├── .gitignore
+├── package.json
+├── tsconfig.json
+└── README.md
