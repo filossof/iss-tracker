@@ -18,7 +18,28 @@ This is the backend service for the ISS Tracker project. It provides APIs to get
 ### Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/iss-tracker.git
+   git clone https://github.com/filossof/iss-tracker.git
    cd iss-tracker
    ```
+
+2. Install the dependencies
+   ```bash
+   npm install
+   ```
+
+### Running the Server
+
+To start the server in development mode:
+
+```bash
+npm start
+
+```
+
+### API Endpoints
+
+- GET /countries: Returns all country names from the dataset.
+- GET /iss: Returns the name of the country the ISS is currently above or 'Ocean' if not above a country.
+- GET /utm: Returns the UTM coordinates of the ISS.
